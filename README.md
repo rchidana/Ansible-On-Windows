@@ -1,6 +1,6 @@
 # Ansible-On-Windows - Env Set Up
 
-###First Install the following Software
+### First Install the following Software
 
 #### 1. Download and Install Vagrant 2.X for Windows : https://www.vagrantup.com/downloads.html
 
