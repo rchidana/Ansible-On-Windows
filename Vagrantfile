@@ -17,16 +17,16 @@ Vagrant.configure("2") do |config|
  config.vm.define "controller" do |cont|
 	cont.vm.hostname = "controller.dev"
 	cont.vm.box = "geerlingguy/ubuntu1604"
-	config.vm.box_download_insecure = true
 	config.vm.network "public_network"
+	cont.vm.network "private_network", ip: "192.168.33.10"
  end
 
 # App server.
  config.vm.define "app1" do |app|
 	app.vm.hostname = "app1.dev"
 	app.vm.box = "geerlingguy/ubuntu1604"
-	config.vm.box_download_insecure = true
 	config.vm.network "public_network"
+	app.vm.network "private_network", ip: "192.168.33.20"
  end
  
 end 
