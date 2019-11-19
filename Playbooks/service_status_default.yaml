@@ -1,0 +1,12 @@
+---
+- name: Get Service Status
+  hosts: all
+  become: true
+
+  tasks:
+  - name: collect facts about system services
+    service_facts:
+
+  - name: Debug
+    debug:
+      var: ansible_facts.services
