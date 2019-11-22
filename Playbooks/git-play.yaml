@@ -1,0 +1,13 @@
+---
+  - name: Checkout Git Repo using credentials stored in Ansible Vault
+    hosts: app
+    vars_files:
+       - git-cred.yaml
+    vars:
+       - destdir: /home/vagrant/Branch_Hello
+    tasks:
+       - name: Checkout Git Repository using git module
+         become: yes
+         git:
+           repo: 'https://{{ gituser }}:{{ gitpass }}@github.com/rchidana/Branch_Hello.git'
+           dest: "{{ destdir }}"
