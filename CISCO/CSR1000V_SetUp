@@ -20,3 +20,9 @@ end
 show ip int brief
 
 ###If the IP address shows up correctly, you are all set to interact with the CSR Device on IP Address : 192.168.0.10
+
+Some simple adhoc commands to run using "raw" module:
+
+>ansible csr -m raw "show clock" -vvv
+>ansible csr -m raw "show version" -vvv
+>ansible csr -m raw "show interfaces" -vvv
