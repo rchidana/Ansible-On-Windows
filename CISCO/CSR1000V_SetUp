@@ -1,0 +1,22 @@
+Commands to configure SSH, users, Keys & IP address to Cisco CSR1000V:
+
+enable
+conf t
+hostname Ansible_R01
+username vagrant pass vagrant
+enable pass vagrant
+line vty 0 15
+login
+transport input ssh
+
+int gigabitethernet1
+ip address 192.168.0.10 255.255.255.0
+no shut
+
+ip domain-name cisco.com
+crypto key generate rsa modul 1024
+end
+
+show ip int brief
+
+###If the IP address shows up correctly, you are all set to interact with the CSR Device on IP Address : 192.168.0.10
