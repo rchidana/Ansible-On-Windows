@@ -5,7 +5,7 @@ conf t
 hostname Ansible_R01
 username vagrant privilege 15 secret vagrant
 line vty 0 15
-login
+login local
 transport input ssh
 
 int gigabitethernet1
